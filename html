@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>tests</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  
+  <header id="header">
+    <h1>Personal notes</h1>
+    <h3>Make it easier</h3>
+  </header>
+  
+  <body>
+    <div class="mainSection">
+
+    <div class="newNoteSection">
+      <div class="buttonAdd">
+        <a href=#><p>+</p></a>
+      </div>
+      <div class="inputNote">
+        <textarea id="textArea" cols="40" rows="5"></textarea>
+        <button onclick="saveButton()" class="save">Save note</button>
+        <h3 id="demo"></h3>
+      </div>
+    </div>
+    
+    <div class="notesSection">
+      <div id="savedItems" class="content">      
+      </div>
+      <a href="#" onclick="removeAll()" class="clear" id="clear">Clear the list</a> 
+    </div>  
+    </div>
+  </body>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js.js"></script>
+</html>
