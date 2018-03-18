@@ -1,0 +1,319 @@
+//the file does not contain all-browser-support yet
+
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700';
+
+@import 'https://fonts.googleapis.com/css?family=Exo|Noticia+Text|Sanchez';
+
+@keyframes slidedown {
+	from {height: 120px;}
+	to {height: 130px;}
+}
+
+@keyframes slideup {
+	from {
+		opacity: 0%;
+		margin-bottom: 3px;
+		color: #34a1af;
+	}
+	to {
+		opacity: 100%;
+		margin-bottom: -5px;
+	}
+}
+
+@keyframes fadeout {
+	from {background: white;}
+	to {background: #bbe5f9;}
+}
+
+@keyframes backgroundFade {
+	from {
+		background: rgb(255, 255, 255, 0.4);
+		opacity: 0.3;
+		z-index: 10;
+		margin-top: 45px;
+	}
+	50% {background: rgb(255, 255, 255, 0.6);}
+	
+	to {
+		background: rgb(255, 255, 255, 0);
+		margin-top: 0px;
+	}
+}
+
+@keyframes buttonClick {
+	from {margin-top: 0px;}
+	50% {margin-top: -10px;}
+	to {margin-top: 0px;}
+}
+
+@keyframes backgroundWhite {
+	from {background-color: transparent; }
+	50% {background-color: transparent;}
+	to {background-color: hsla(215, 100%, 100%, 0.5); }
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	max-width: 1500px;
+	margin: auto;
+	background: url("./img/22.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+header {
+	height: 130px;
+    text-align: center;
+    background: #bbe5f9;
+    animation: slidedown 1.5s, fadeout 4s;
+    width: 100%;
+}
+
+header h1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	margin-bottom: -5px;
+	padding-top: 18px;
+	color: white;
+	animation-name: slideup;
+	animation-duration: 1s;	
+}
+
+header h3 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+	margin-bottom: -5px;
+	color: #7dafc6;
+}
+
+
+header h1 h3 {
+	font-family: 'Ubuntu', sans-serif;
+	display: block;
+}
+
+.mainSection {
+  animation-name: backgroundFade;
+  animation-duration: 1.5s;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  /*background: linear-gradient(to bottom, #ffffff 0%, #dddee1 100%);  */
+  background-repeat: no-repeat;
+  text-align: center; 
+  margin: auto; 
+}
+
+.newNoteSection {
+	max-height: 1200px;
+	height: 1400px;
+	padding: 5vh 5vh 30vh;
+	background-color: hsla(215, 100%, 100%, 0.5); 
+	z-index: 3;
+	animation: backgroundWhite 2s;
+}
+
+.notesSection {
+	padding: 5vh 5vh 30vh;
+	margin: auto;
+	margin-top: 5px;
+}
+
+button {
+  margin: 10px;
+}
+
+.clear {
+	background-color: #83d9fc;
+    border: none;
+    color: white;
+    padding: 4px 12px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 5px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px #7ed7fc;
+}
+.save {
+	background-color: #83d9fc;
+    border: none;
+    color: white;
+    padding: 4px 12px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 5px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px #7ed7fc;
+    position: relative;
+}
+
+#clear {
+	display: none;
+}
+
+.clear:active {
+	top: 4px;
+	text-decoration: none;
+}
+.save:active {
+	top: 4px;
+	text-decoration: none;
+}
+.clear:hover {
+	color: #e8eced;
+	text-decoration: none;
+}
+.save:hover {
+	color: #e8eced;
+	text-decoration: none;
+}
+
+div .buttonAdd {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: #31b9d6;
+	margin-left: 20px;
+}
+
+div .buttonAdd:hover {
+	display: block;
+	height: 63px;
+	width: 63px;
+}
+
+.buttonClick {
+	animation: buttonClick 0.5s;
+}
+
+div .buttonAdd p {
+	font-weight: 300;
+	font-size: 50px;
+	color: white;
+	line-height: 60px;
+	padding-top: -100px;
+}
+
+div .buttonAdd p:hover {
+	line-height: 63px;
+}
+
+#savedItems {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  padding: 10px;
+}
+
+.note {
+  border: #c1c5cc solid 0.5px;
+  margin: 5px;
+  border-radius: 4px;
+  height: 200px;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  overflow: auto;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.note:hover  {
+	transform: scale(1.005);
+	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+
+.noteGradient {
+	background: linear-gradient(to bottom, transparent 0%, #b3d7d8 100%);
+	z-index: 5;
+	opacity: 50%;
+}
+
+.note p {
+	margin: 15px;
+	line-height: 1.5;
+	font-size: 15px;
+	font-family: Exo, sans-serif;
+}
+
+.note::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+}
+
+.note::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+.note::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.note .remove {
+   position: absolute;
+   top: 0px;
+   right: 5px;
+   display: none;
+   font-size: 13px;
+   background-color: #c7e4e5;
+   width: 15px;
+   height: 15px;
+   padding-bottom: 5px;
+   padding-top: -4px;
+   margin-top: 3px; 
+   text-align: center;
+   line-height: 13px;
+   color: #8aa9aa;
+}
+
+textarea {
+  height: 200px;
+  margin-top: 20px;
+  width: 180px;
+  text-align: top; 
+  padding: 10px;
+  font-family: 'Noticia Text', Georgia;
+}
+
+body {
+	font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: 300;
+	line-height: 1.65;
+	text-size-adjust: none;
+	overflow-style: scrollbar;
+	max-height: 800px;
+}
+	
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+p {
+	margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	margin: 0 0 1em 0;
+}
+
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
